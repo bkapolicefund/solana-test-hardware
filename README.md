@@ -6,7 +6,7 @@ SOLANA TEST HARDWARE
 
 INSTALL TESTS
 
-    apt install slurm iotop htop iftop speedtest tcptrack hddtemp lm-sensors
+    apt install slurm iotop htop iftop speedtest-cli tcptrack hddtemp lm-sensors
 
 INSTALL TURBO CONTROL - AND PLEASE RESEARCH HOW TO FULLY UTILIZE AS AMD IS 
                         DIFFERENT COMMANDS AND APPS FROM INTEL CPU TURBOING
@@ -112,7 +112,6 @@ CHECK NIC SPEEDS
     
 CHECK BANDWIDTH
 
-    apt install speedtest-cli
     
 RUN SPEEDTEST
 
