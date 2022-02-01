@@ -4,41 +4,40 @@
 SOLANA TEST HARDWARE 
 ##########################################################################
 
-INSTALL TESTS
+install tests
 
     apt install slurm iotop htop iftop speedtest-cli tcptrack hddtemp lm-sensors
 
-INSTALL TURBO CONTROL - AND PLEASE RESEARCH HOW TO FULLY UTILIZE AS AMD IS 
-                        DIFFERENT COMMANDS AND APPS FROM INTEL CPU TURBOING
+install turbo control - and please research how to fully utilize as amd is different commands and apps from intel cpu turboing
 
     apt-get install indicator-cpufreq acpi-support acpid acpi
 
-TO START TURBO CONTROL UP THE FIRST TIME, RUN THE FOLLOWING COMMAND AND THEN IT STARTS ITSELF NEXT BOOTS:
+start turbo control up the first time, run the following command and then it starts itself next boots:
 
     indicator-cpufreq &
 
-YOU SHOULD STILL BE ABLE TO CHANGE THE TURBO GOVERNOR WHEN YOU ARE USING INTEL_PSTATE BY RUNNING:
+you should still be able to change the turbo governor when you are using intel_pstate by running:
 
     cpupower frequency-set -g performance
     cpupower frequency-set --max 4600000
     cpupower frequency-set --freq 4600000
 
-TEST TURBO WAY 1
+test turbo way 1
 
     grep MHz /proc/cpuinfo
     
-TEST DISPLAYS
+test displays
     
     cpu MHz		: 4699.250
     cpu MHz		: 4699.444
     cpu MHz		: 4698.486
     cpu MHz		: 4698.977 ...
 
-TEST TURBO WAY 2
+test turbo way 2
 
     turbostat --debug sleep 10
 
-TURBOSTAT DISPLAYS
+turbostat displays
 
     turbostat version 19.08.31 - Len Brown <lenb@kernel.org>
     cpu 0 pkg 0 die 0 node 0 lnode 0 core 0 thread 0
@@ -66,78 +65,78 @@ TURBOSTAT DISPLAYS
     57	1643720006.330553	1	17	3	3	1798	49.97	3599	3394	43297	198	10743	19193	0.01	9.37	41.02
     65	1643720006.330629	2	2	4	4	2001	56.10	3566	3394	39569	312	8000	15238	0.01	7.16	37.03 ...   
     
-RUN TEMP CHECK 
+run temp check 
 
     sensors
         
-CHECK GPU USAGE
+check gpu usage
 
     nvidia-smi
 
-CHECK MEMORY
+check memory
     
     free    
     
-LATENCY TESTS
+latency tests
         
-FIRST IS PING
+first is ping
     
     46.4.32.165
     144.76.29.181
     65.108.79.154
     
-THAT IS 2 FALKENSTEIN AND ONE HETZNER IN FINLAND SO LETS SEE THE NUMBERS U GET. I GET THIS FROM MOSCOW:
+that is 2 falkenstein and one hetzner in finland so lets see the numbers u get. i get this from moscow:
     
     64 bytes from 46.4.32.165: icmp_seq=1 ttl=58 time=39.7 ms
     64 bytes from 144.76.29.181: icmp_seq=1 ttl=58 time=40.0 ms
     64 bytes from 65.108.79.154: icmp_seq=1 ttl=58 time=34.9 ms    
     
-CHECK LATENCY AND ETHERNET
+check latency and ethernet
 
     tcptrack -i eno1
 
-CHECK CPU THREAD SPEEDS
+check cpu thread speeds
 
     htop
     
-CHECK DISK WRITE SPEEDS
+check disk write speeds
     
     iotop
 
-CHECK BANDWIDTH SLURM 
+check bandwidth slurm 
 
-NOTE U MUST SELECT THE INTERFACE AND PUT IT AFTER THE -I SWITCH USING THE IF YOU GET RUNNING 
+note u must select the interface and put it after the -i switch using the if you get running 
 
     ip a
     
-THEN PUT THE IF NAME AFTER THE -i SWITCH LIKE SO    
+then put the if name after the -i switch like so    
 
     slurm -i enp3s0
 
-CHECK BANDWIDTH IFTOP
+check bandwidth iftop
 
     iftop
     
-CHECK BANDWIDTH SPEEDTEST
+check bandwidth speedtest
 
     speedtest
             
-CHECK DISK SPEED AS IT MUST BE 700 MBYTES/SEC MINIMUM READ AND WRITING
-AND BE SURE ITS RUNNING ON THE NVMe LEDGER DRIVE, NOT THE SSD OS DRIVE
+check disk speed as it must be 700 mbytes/sec minimum read and writing
+and be sure its running on the nvme ledger drive, not the ssd os drive
 
     1 GB WRITES    
     fio --name=randwrite --ioengine=libaio --iodepth=1 --rw=randrw --bs=4m --direct=0 --size=1G --numjobs=4 --runtime=60 --group_reporting | egrep '(IOPS|READ|WRITE)'
     
-CHECK DISK ARCHITECTURE
+check disk architecture
 
     lsblk
     
-DISK INFO
+disk info
 
     lshw -class disk  
 
     hwinfo --disk
     
-QUERY SYSTEM LOG FOR ABNORMALITIES INSIDE OF
+query system log for abnormalities inside of
 
     journalctl | less
