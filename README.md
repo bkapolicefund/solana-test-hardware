@@ -15,6 +15,7 @@ start turbo control up the first time, run the following command and then it sta
     indicator-cpufreq &
 
 you should still be able to change the turbo governor when you are using intel_pstate by running:
+note freq is in kilohertz so chop 3 zeros off of what you want so 4600000 is 4.6 gigahertz
 
     cpupower frequency-set -g performance
     cpupower frequency-set --max 4600000
