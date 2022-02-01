@@ -77,7 +77,21 @@ CHECK GPU USAGE
 CHECK MEMORY
     
     free    
-
+    
+LATENCY TESTS
+        
+FIRST IS PING
+    
+    46.4.32.165
+    144.76.29.181
+    65.108.79.154
+    
+THAT IS 2 FALKENSTEIN AND ONE HETZNER IN FINLAND SO LETS SEE THE NUMBERS U GET. I GET THIS FROM MOSCOW:
+    
+    64 bytes from 46.4.32.165: icmp_seq=1 ttl=58 time=39.7 ms
+    64 bytes from 144.76.29.181: icmp_seq=1 ttl=58 time=40.0 ms
+    64 bytes from 65.108.79.154: icmp_seq=1 ttl=58 time=34.9 ms    
+    
 CHECK LATENCY AND ETHERNET
 
     tcptrack -i eno1
