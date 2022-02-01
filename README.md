@@ -14,8 +14,7 @@ start turbo control up the first time, run the following command and then it sta
 
     indicator-cpufreq &
 
-you should still be able to change the turbo governor when you are using intel_pstate by running:
-note freq is in kilohertz so chop 3 zeros off of what you want so 4600000 is 4.6 gigahertz
+you should still be able to change the turbo governor when you are using intel_pstate by running - Note freq is in kilohertz so chop 3 zeros off of what you want so 4600000 is 4.6 gigahertz
 
     cpupower frequency-set -g performance
     cpupower frequency-set --max 4600000
@@ -120,8 +119,7 @@ check bandwidth speedtest
 
     speedtest
             
-check disk speed as it must be 700 mbytes/sec minimum read and writing
-and be sure its running on the nvme ledger drive, not the ssd os drive
+check disk speed as it must be 700 mbytes/sec minimum read and writing and be sure its running on the nvme ledger drive, not the ssd os drive
 
     1 GB WRITES    
     fio --name=randwrite --ioengine=libaio --iodepth=1 --rw=randrw --bs=4m --direct=0 --size=1G --numjobs=4 --runtime=60 --group_reporting | egrep '(IOPS|READ|WRITE)'
