@@ -15,6 +15,7 @@ start turbo control up the first time, run the following command and then it sta
     indicator-cpufreq &
 
 you should still be able to change the turbo governor when you are using intel_pstate by running - Note freq is in kilohertz so chop 3 zeros off of what you want so 4600000 is 4.6 gigahertz
+this is good command to set AMD chip freq to 4.6 GHz
 
     cpupower frequency-set -g performance
     cpupower frequency-set --max 4600000
@@ -67,7 +68,7 @@ check your power usage of each thread with
 
     powertop
     
-check lots of stats on power use with subcommands of cpupower    
+check lots of stats on power use with subcommands of cpupower - note this appears to be mostly for intel turboing
 
     cpupower frequency-info
 	cpupower frequency-set
