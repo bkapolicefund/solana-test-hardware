@@ -8,7 +8,7 @@ install tests
 
 install turbo control - and please research how to fully utilize as amd is different commands and apps from intel cpu turboing
 
-    apt-get install indicator-cpufreq acpi-support acpid acpi
+    apt-get install indicator-cpufreq acpi-support acpid acpi powertop
 
 start turbo control up the first time, run the following command and then it starts itself next boots:
 
@@ -63,6 +63,21 @@ turbostat displays
     57	1643720006.330553	1	17	3	3	1798	49.97	3599	3394	43297	198	10743	19193	0.01	9.37	41.02
     65	1643720006.330629	2	2	4	4	2001	56.10	3566	3394	39569	312	8000	15238	0.01	7.16	37.03 ...   
     
+check your power usage of each thread with 
+
+    powertop
+    
+check lots of stats on power use with subcommands of cpupower    
+
+    cpupower frequency-info
+	cpupower frequency-set
+	cpupower idle-info
+	cpupower idle-set
+	cpupower set
+	cpupower info
+	cpupower monitor
+	cpupower help
+        
 run temp check 
 
     sensors
