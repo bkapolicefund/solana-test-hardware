@@ -4,7 +4,7 @@ TEST HARDWARE
 
 install tests
 
-    apt install slurm iotop htop iftop speedtest-cli tcptrack hddtemp lm-sensors
+    apt install slurm iotop htop iftop speedtest-cli tcptrack hddtemp lm-sensors hwinfo
 
 install turbo control - and please research how to fully utilize as amd is different commands and apps from intel cpu turboing
 
