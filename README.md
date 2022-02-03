@@ -94,6 +94,7 @@ check latency and ethernet
     tcptrack -i eno1
 
 check cpu thread speeds
+also look real carefull at your swap drive in htop and see that it is two or more times bigger than your total RAM memory, so you want 128 GB of swap if you run 64 GB or RAM
 
     htop
     
